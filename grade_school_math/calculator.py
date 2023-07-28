@@ -56,7 +56,7 @@ def sample(model, qn, tokenizer, device, sample_len):
                 **toks, max_length=orig_len + 1, pad_token_id=model.config.eos_token_id
             )
             text = tokenizer.batch_decode(out)[0]
-
+            print(f"text begin:{text} end")
             if out[0, -1].item() in EQUALS_TOKENS:
                 answer = use_calculator(text)
                 if answer is not None:

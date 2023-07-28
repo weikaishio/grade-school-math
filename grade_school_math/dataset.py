@@ -30,6 +30,7 @@ def extract_answer(completion):
     if match:
         match_str = match.group(1).strip()
         match_str = match_str.replace(",", "")
+        print(f"match_str:{match_str}")
         return match_str
     else:
         return INVALID_ANS
